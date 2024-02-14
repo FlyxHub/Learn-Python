@@ -30,7 +30,6 @@ def newGuess(): # Asks user for guess
 # -------------------- Game Loop -------------------- #
 while True: # Plays the game until the user CTRL+C's
     victory = False
-    correct = 0
     wordList = pickWord()
     guessList = initializeList()
 
