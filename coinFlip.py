@@ -2,7 +2,7 @@ import os, random # Import modules
 
 coin = ['heads', 'tails'] # Defines the coin
 
-def cls(): # Clears the terminal
+def clear(): # Clears the terminal
     os.system('cls')
     return
 
@@ -11,7 +11,7 @@ def flip(): # Flips the coin and returns outcome
     return flip
 
 def call(): # Gets the user's prediction
-    userCall = input('Enter HEADS or Tails: ').lower()
+    userCall = input('Enter HEADS or TAILS: ').lower()
     return userCall
 
 def check(flip:str, call:str): # Validates user's preduction and determines winner
@@ -22,8 +22,9 @@ def check(flip:str, call:str): # Validates user's preduction and determines winn
     else:
         return f"It's {flip.upper()}. You lose."
     
+# -------------------- Game Loop -------------------- #
 while True: # Play the game until the user CTRL+C's
-    cls()
+    clear()
     coinFlip, userCall = flip(), call()
     print(check(coinFlip, userCall))
     input('Press ENTER to play again.')
