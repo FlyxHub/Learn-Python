@@ -39,19 +39,33 @@ def generatePassword(length:int, includeSymbols:bool): # Generates a random pass
 # -------------------- Program Loop -------------------- #
 while True: # Loops the program until the user CTRL+C's
     clear()
-    clearToGenerate = True
-    desiredLength = int(input('How many characters should your password contain? '))
-    canIncludeSymbols = input('Can this password contain symbols? (y/n): ').lower()
+    clearToGenerate = False
+    desiredLength = input('How many characters should your password contain? ')
 
-    if canIncludeSymbols != 'y' and canIncludeSymbols != 'n':
-        clearToGenerate = False
-        print(f'Invalid option. Please try again.')
+    try:
+        desiredLength = int(desiredLength)
+        clearToGenerate = True
+        proceed = True
+    except:
+        print(f'Failed to convert "{desiredLength}" to an integer. Try again with a whole number.')
         pause()
+        clearToGenerate = False
+        proceed = False
+
+    if proceed is True:
+        canIncludeSymbols = input('Can this password contain symbols? (y/n): ').lower()
+
+        if canIncludeSymbols != 'y' and canIncludeSymbols != 'n':
+            clearToGenerate = False
+            print(f'Invalid option. Please try again.')
+            pause()
+        else:
+            clearToGenerate = True
     else:
         pass
 
-
     while clearToGenerate is True:
+        
         if canIncludeSymbols == 'y':
             generatedPassword = generatePassword(length=desiredLength, includeSymbols=True)
             clear()
