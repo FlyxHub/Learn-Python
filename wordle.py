@@ -14,12 +14,6 @@ def pickWord(): # Chooses a word from the list, and splits it into list of lette
     word = random.choice(words)
     wordSplit = list(word)
     return wordSplit
-
-def checkLetter(letter:str, list:list): # Checks if letter is in list
-    if letter not in list:
-        return 'Not present'
-    else:
-        return list.index(letter) + 1
     
 def initializeList(): # Displays blank list to start
     initialList = ['_', '_', '_', '_', '_']
