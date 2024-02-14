@@ -1,14 +1,14 @@
 import os, random # Import modules
 
-def cls(): # Clears the terminal
+def clear(): # Clears the terminal
     os.system('cls')
     return
 
-def pause():
+def pause(): # Makes the user press ENTER to continue
     input('Press ENTER to continue.')
     return
 
-words = ['crane', 'swamp', 'crash'] # Defines pool of words
+words = ['crane', 'swamp', 'crash', 'soupy', 'quart', 'shart'] # Defines pool of words
 
 def pickWord(): # Chooses a word from the list, and splits it into list of letters
     word = random.choice(words)
@@ -19,14 +19,46 @@ def checkLetter(letter:str, list:list): # Checks if letter is in list
     if letter not in list:
         return 'Not present'
     else:
-        return list.index(letter)
+        return list.index(letter) + 1
+    
+def initializeList(): # Displays blank list to start
+    initialList = ['_', '_', '_', '_', '_']
+    return initialList
 
-cls()  
-wordList = pickWord()
-word = ''.join(wordList)
-print(word)
-pause()
-letter = input('Enter a letter: ')
-checkResult = checkLetter(letter, wordList)
-print(checkResult)
+def updateList(list:list, index:int, letter:str): # Updates list 
+    list[index] = letter
+    return list
 
+def newGuess(): # Asks user for guess
+    guess = input('Enter a guess: ').lower()
+    return guess
+
+# -------------------- Game Loop -------------------- #
+while True: # Play the game until the user CTRL+C's
+    victory = False
+    correct = 0
+    wordList = pickWord()
+    guessList = initializeList()
+
+    while victory == False:
+        clear()
+        print(' '.join(guessList))
+
+        guess = newGuess()
+        if guess in wordList:
+            updateList(guessList, wordList.index(guess), guess)
+        else:
+            print('Try again!')
+            pause()
+
+        if ''.join(guessList) == ''.join(wordList):
+            victory = True
+        else:
+            pass
+
+    clear()
+    print(f"The word was {''.join(wordList).upper()}. You win!")
+    pause()
+
+# Code currently does not support words with duplicate letters. May or may not update later.
+    
