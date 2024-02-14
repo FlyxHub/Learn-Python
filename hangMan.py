@@ -24,7 +24,7 @@ def updateList(list:list, index:int, letter:str): # Updates list
     return list
 
 def newGuess(): # Asks user for guess
-    guess = input('Enter a guess: ').lower()
+    guess = input('Guess a letter: ').lower()
     return guess
 
 # -------------------- Game Loop -------------------- #
