@@ -23,7 +23,7 @@ def check(flip:str, call:str): # Validates user's preduction and determines winn
         return f"It's {flip.upper()}. You lose."
     
 # -------------------- Game Loop -------------------- #
-while True: # Play the game until the user CTRL+C's
+while True: # Plays the game until the user CTRL+C's
     clear()
     coinFlip, userCall = flip(), call()
     print(check(coinFlip, userCall))

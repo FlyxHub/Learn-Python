@@ -34,7 +34,7 @@ def newGuess(): # Asks user for guess
     return guess
 
 # -------------------- Game Loop -------------------- #
-while True: # Play the game until the user CTRL+C's
+while True: # Plays the game until the user CTRL+C's
     victory = False
     correct = 0
     wordList = pickWord()
