@@ -18,14 +18,8 @@ def divide(num1:float, num2:float): # Divides the numbers
 
 # -------------------- Program Start -------------------- #
 clear()
-equation = input('Enter your equation separated by spaces (2 + 2): \n')
+equation = input('Enter your equation separated by spaces: \n')
 equationList = equation.split(' ')
-
-if len(equationList) >> 3:
-    clear()
-    print(f'You must supply a number, followed by an operation, followed by another number.')
-else:
-    pass
 
 num1 = float(equationList[0])
 num2 = float(equationList[2])
