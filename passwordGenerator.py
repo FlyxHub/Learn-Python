@@ -1,7 +1,7 @@
 import os, random, string # Import modules
 
 letters = string.ascii_letters # Initialize list of letters
-symbols = ['!', '@', '#', '$', '%', '&'] # Initialize list of symbold
+symbols = ['!', '@', '#', '$', '%', '&'] # Initialize list of symbols
 
 def clear(): # Clears the terminal
     os.system('cls')
@@ -19,7 +19,7 @@ def generatePassword(length:int, includeSymbols:bool): # Generates a random pass
             if random.randint(1, 2) == 1:
                 passwordList.append(random.choice(letters))
             else:
-                passwordList.append(str(random.randint(1, 10)))
+                passwordList.append(str(random.randint(0, 9)))
         password = ''.join(passwordList)
         return password
     else:
@@ -30,7 +30,7 @@ def generatePassword(length:int, includeSymbols:bool): # Generates a random pass
         if roll == 1:
             passwordList.append(random.choice(letters))
         elif roll == 2:
-            passwordList.append(str(random.randint(1, 10)))
+            passwordList.append(str(random.randint(0, 9)))
         else:
             passwordList.append(random.choice(symbols))
     password = ''.join(passwordList)
