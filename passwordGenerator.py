@@ -65,7 +65,6 @@ while True: # Loops the program until the user CTRL+C's
         pass
 
     while clearToGenerate is True:
-        
         if canIncludeSymbols == 'y':
             generatedPassword = generatePassword(length=desiredLength, includeSymbols=True)
             clear()
