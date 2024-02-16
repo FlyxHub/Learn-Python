@@ -1,10 +1,6 @@
-import os, random # Import modules
+import random # Import modules
 
 coin = ['heads', 'tails'] # Defines the coin
-
-def clear(): # Clears the terminal
-    os.system('cls')
-    return
 
 def flip(): # Flips the coin and returns outcome
     flip = random.choice(coin)
@@ -24,7 +20,6 @@ def check(flip:str, call:str): # Validates user's preduction and determines winn
     
 # -------------------- Game Loop -------------------- #
 while True: # Plays the game until the user CTRL+C's
-    clear()
     coinFlip, userCall = flip(), call()
     print(check(coinFlip, userCall))
     input('Press ENTER to play again.')
