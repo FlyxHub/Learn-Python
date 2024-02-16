@@ -1,19 +1,19 @@
-# Password Generator
-Randomly generate a password.
+# Flip a Coin
+Predict the outcome of a coin flip!
 
 ## Requirements
 For this challenge, write a script to do the following:
 
-- Prompt the user for the desired length of the password to generate
-- Prompt the user if they'd like their password to include special characters (!, @, #, $, %, &)
-    - If yes, generate a password of the specified length including numbers, letters, and special characters
-    - If no, generate a password of the specified length including only numbers and letters
-- Prompt the user to press ENTER to generate another password
+- Prompt the user to enter either heads or tails
+- Flip a coin, randomly choose either heads or tails
+    - If the user's prediction is correct, they win!
+    - If the user's preduction is incorrect, they lose.
+- Propmt the user to press ENTER to play again
 
 This process should repeat until the user stops the script with CTRL+C. \
 Your script should also include error handling, you never know what the user will do, and how your code will react.
 
-When you're done, compare your code to [mine](passwordGenerator.py). \
+When you're done, compare your code to [mine](coinFlip.py). \
 Assess what you did well, and what you could do better.
 
 ## Resources
