@@ -10,10 +10,11 @@ For this challenge, write a script to do the following:
     - If the user's preduction is incorrect, they lose.
 - Propmt the user to press ENTER to play again
 
-This process should repeat until the user stops the script with CTRL+C
+This process should repeat until the user stops the script with CTRL+C. \
 Your script should also include error handling, you never know what the user will do, and how your code will react.
 
-When you're done, compare your code to [mine](coinFlip.py). Asesss what you did well, and what you could do better.
+When you're done, compare your code to [mine](coinFlip.py). \
+Assess what you did well, and what you could do better.
 
 ## Resources
 I can't stop you from just Googling how to do this, but that won't help you learn!
