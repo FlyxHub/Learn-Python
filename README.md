@@ -15,5 +15,4 @@ I'm happy to help wherever, and whenever I can!
 
 The easiest way to get in contact is by joining [my Discord server!](https://discord.gg/flyx)
 
-Good luck!
-*- Flyx*
+Good luck! *- Flyx*
