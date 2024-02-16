@@ -12,6 +12,7 @@ That's it, pick a challenge and give it your best shot!
 
 ## Contact me
 I'm happy to help wherever, and whenever I can!
+I'm also open to challenge suggestions.
 
 The easiest way to get in contact is by joining [my Discord server!](https://discord.gg/flyx)
 
