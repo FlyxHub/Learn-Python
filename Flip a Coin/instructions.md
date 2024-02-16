@@ -1,10 +1,10 @@
 # Flip a Coin
 Predict the outcome of a coin flip!
 
-## Instructions
+## Requirements
 For this challenge, write a script to do the following:
 
-- Prompt the user to enter either 'heads' or 'tails'
+- Prompt the user to enter either heads or tails
 - Flip a coin, randomly choose either heads or tails
     - If the user's prediction is correct, they win!
     - If the user's preduction is incorrect, they lose.
