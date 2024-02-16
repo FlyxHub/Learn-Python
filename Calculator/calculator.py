@@ -1,44 +1,64 @@
-import os # Import modules
+import os  # Import modules
 
-def clear(): # Clears the terminal
-    os.system('cls')
+
+def clear():  # Clears the terminal
+    os.system("cls")
     return
 
-def add(num1:float, num2:float): # Adds the numbers
-    return num1 + num2
-
-def subtract(num1:float, num2:float): # Subtracts  the numbers
-    return num1 - num2
-
-def multiply(num1:float, num2:float): # Multiplies the numbers
-    return num1 * num2
-
-def divide(num1:float, num2:float): # Divides the numbers
-    return num1 / num2
-
-# -------------------- Program Start -------------------- #
-clear()
-equation = input('Enter your equation separated by spaces: \n')
-equationList = equation.split(' ')
-
-num1 = float(equationList[0])
-num2 = float(equationList[2])
-operation = equationList[1]
-
-if operation == '+':
-    answer = add(num1, num2)
+# -------------------- Program Loop -------------------- #
+while True:
     clear()
-    print(f'{equation} = {answer}')
-elif operation == '-':
-    answer = subtract(num1, num2)
-    clear()
-    print(f'{equation} = {answer}')
-elif operation == '*':
-    answer = multiply(num1, num2)
-    clear()
-    print(f'{equation} = {answer}')
-elif operation == '/':
-    answer = divide(num1, num2)
-    clear()
-    print(f'{equation} = {answer}')
+    equation = input("Enter your equation separated by spaces: \n")
+    equationList = equation.split(" ")
 
+    try:
+        num1 = float(equationList[0])
+        num2 = float(equationList[2])
+        operation = equationList[1]
+        calculatable = True
+    except:
+        clear()
+        print("Failed to parse equation. Did you separate it with spaces?")
+
+    if len(equationList) != 3:
+        clear()
+        print("Failed to perform calaulation. Make sure you only supply 2 numbers and one operation(2 + 2).")
+        calculatable = False
+    else:
+        pass
+
+    while calculatable is True:
+        if operation == "^":
+            answer = num1**num2
+            clear()
+            print(f"{equation} = {answer}")
+            break
+        elif operation == "+":
+            answer = num1 + num2
+            clear()
+            print(f"{equation} = {answer}")
+            break
+        elif operation == "-":
+            answer = num1 - num2
+            clear()
+            print(f"{equation} = {answer}")
+            break
+        elif operation == "*":
+            answer = num1 - num2
+            clear()
+            print(f"{equation} = {answer}")
+            break
+        elif operation == "/":
+            answer = num1 / num2
+            clear()
+            print(f"{equation} = {answer}")
+            break
+        else:
+            clear()
+            print(
+                f'Unsupported operator "{operation}". Supported operators are ^, +, -, *, and /'
+            )
+            break
+
+    input("Press ENTER to perform another calculation. ")
+    calculatable = False
