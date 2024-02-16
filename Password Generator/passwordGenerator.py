@@ -81,5 +81,5 @@ while True: # Loops the program until the user CTRL+C's
         
         clearToGenerate = False
 
-# So many nested if statements, so little time to de-nest
+# So many nested if statements, so little time to de-nest.
         
