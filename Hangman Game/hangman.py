@@ -1,5 +1,5 @@
-import os # Import modules
-from random_word import RandomWords # This must be pip installed
+import os  # Import modules
+from random_word import RandomWords  # This must be pip installed
 
 
 def clear():  # Clears the terminal
