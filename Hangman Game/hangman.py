@@ -65,11 +65,12 @@ while True:  # Plays the game until the user CTRL+C's
         else:
             pass
 
-        if "".join(guessList) == "".join(wordList):
+        if guessList == wordList:
+            clear()
+            print(" ".join(guessList))
             victory = True
         else:
             pass
 
-    clear()
     print(f"The word was {''.join(wordList).upper()}. You win!")
     pause()
