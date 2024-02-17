@@ -15,10 +15,6 @@ def pickWord(): # Chooses a word from the list, and splits it into list of lette
     wordSplit = list(word)
     return wordSplit
     
-def initializeList(): # Displays blank list to start
-    initialList = ['_', '_', '_', '_', '_']
-    return initialList
-
 def updateList(list:list, index:int, letter:str): # Updates list 
     list[index] = letter
     return list
@@ -31,7 +27,7 @@ def newGuess(): # Asks user for guess
 while True: # Plays the game until the user CTRL+C's
     victory = False
     wordList = pickWord()
-    guessList = initializeList()
+    guessList = ['_', '_', '_', '_', '_']
 
     while victory == False:
         clear()
