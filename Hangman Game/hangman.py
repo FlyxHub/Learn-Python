@@ -1,4 +1,4 @@
-import os, random  # Import modules
+import os # Import modules
 from random_word import RandomWords
 
 
