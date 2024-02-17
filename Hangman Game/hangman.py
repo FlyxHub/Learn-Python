@@ -8,7 +8,7 @@ def pause(): # Makes the user press ENTER to continue
     input('Press ENTER to continue.')
     return
 
-words = ['crane', 'swamp', 'crash', 'soupy', 'quart', 'shart'] # Defines pool of words
+words = ['crane', 'swamp', 'crash', 'soupy', 'quart', 'shart', 'stoop', 'snoop', 'creep'] # Defines pool of words
 
 def pickWord(): # Chooses a word from the list, and splits it into list of letters
     word = random.choice(words)
@@ -23,6 +23,19 @@ def newGuess(): # Asks user for guess
     guess = input('Guess a letter: ').lower()
     return guess
 
+def findRepeats(list:list, item:str): # Finds indexes of repeat items in list
+    repeats = []
+    index = 0
+    for letter in list:
+        if letter == item:
+            repeats.append(index)
+        else:
+            pass
+
+        index += 1
+
+    return repeats
+
 # -------------------- Game Loop -------------------- #
 while True: # Plays the game until the user CTRL+C's
     victory = False
@@ -34,8 +47,10 @@ while True: # Plays the game until the user CTRL+C's
         print(' '.join(guessList))
 
         guess = newGuess()
+        repeats = findRepeats(wordList, guess)
         if guess in wordList:
-            updateList(guessList, wordList.index(guess), guess)
+            for index in repeats:
+                updateList(guessList, index, guess)
         else:
             print('Try again!')
             pause()
@@ -49,5 +64,5 @@ while True: # Plays the game until the user CTRL+C's
     print(f"The word was {''.join(wordList).upper()}. You win!")
     pause()
 
-# Code currently does not support words with duplicate letters. May or may not update later.
-    
+# Code currently only supports 5 letter words. May come back and fix later.    
+
