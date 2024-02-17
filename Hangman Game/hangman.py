@@ -1,4 +1,5 @@
 import os, random  # Import modules
+from random_word import RandomWords
 
 
 def clear():  # Clears the terminal
@@ -11,23 +12,17 @@ def pause():  # Makes the user press ENTER to continue
     return
 
 
-words = [
-    "crane",
-    "swamp",
-    "crash",
-    "soupy",
-    "quart",
-    "shart",
-    "stoop",
-    "snoop",
-    "creep",
-]  # Defines pool of words
-
-
-def pickWord():  # Chooses a word from the list, and splits it into list of letters
-    word = random.choice(words)
+def pickWord():  # Chooses a word from the list, and splits it into list of letters\
+    word = RandomWords().get_random_word()
     wordSplit = list(word)
     return wordSplit
+
+
+def initializeList(wordList: list):  # Initializes the blank list
+    blankList = []
+    for letter in list(wordList):
+        blankList.append("_")
+    return blankList
 
 
 def updateList(list: list, index: int, letter: str):  # Updates list
@@ -56,7 +51,7 @@ def findRepeats(list: list, item: str):  # Finds indexes of repeat items in list
 while True:  # Plays the game until the user CTRL+C's
     victory = False
     wordList = pickWord()
-    guessList = ["_", "_", "_", "_", "_"]
+    guessList = initializeList(wordList)
 
     while victory == False:
         clear()
@@ -68,8 +63,7 @@ while True:  # Plays the game until the user CTRL+C's
             for index in repeats:
                 updateList(guessList, index, guess)
         else:
-            print("Try again!")
-            pause()
+            pass
 
         if "".join(guessList) == "".join(wordList):
             victory = True
@@ -79,5 +73,3 @@ while True:  # Plays the game until the user CTRL+C's
     clear()
     print(f"The word was {''.join(wordList).upper()}. You win!")
     pause()
-
-# Code currently only supports 5 letter words. May come back and fix later.
