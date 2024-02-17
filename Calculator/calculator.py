@@ -5,6 +5,7 @@ def clear():  # Clears the terminal
     os.system("cls")
     return
 
+
 # -------------------- Program Loop -------------------- #
 while True:
     clear()
@@ -22,7 +23,9 @@ while True:
 
     if len(equationList) != 3:
         clear()
-        print("Failed to perform calaulation. Make sure you only supply 2 numbers and one operation(2 + 2).")
+        print(
+            "Failed to perform calaulation. Make sure you only supply 2 numbers and one operation(2 + 2)."
+        )
         calculatable = False
     else:
         pass

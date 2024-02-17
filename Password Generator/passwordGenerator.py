@@ -1,17 +1,20 @@
-import os, random, string # Import modules
+import os, random, string  # Import modules
 
-letters = string.ascii_letters # Initialize list of letters
-symbols = ['!', '@', '#', '$', '%', '&'] # Initialize list of symbols
+letters = string.ascii_letters  # Initialize list of letters
+symbols = ["!", "@", "#", "$", "%", "&"]  # Initialize list of symbols
 
-def clear(): # Clears the terminal
-    os.system('cls')
+
+def clear():  # Clears the terminal
+    os.system("cls")
     return
 
-def pause(): # Makes the user press ENTER to continue
-    input('Press ENTER to continue.')
+
+def pause():  # Makes the user press ENTER to continue
+    input("Press ENTER to continue.")
     return
 
-def generatePassword(length:int, includeSymbols:bool): # Generates a random password
+
+def generatePassword(length: int, includeSymbols: bool):  # Generates a random password
     passwordList = []
 
     if includeSymbols is False:
@@ -20,7 +23,7 @@ def generatePassword(length:int, includeSymbols:bool): # Generates a random pass
                 passwordList.append(random.choice(letters))
             else:
                 passwordList.append(str(random.randint(0, 9)))
-        password = ''.join(passwordList)
+        password = "".join(passwordList)
         return password
     else:
         pass
@@ -33,31 +36,34 @@ def generatePassword(length:int, includeSymbols:bool): # Generates a random pass
             passwordList.append(str(random.randint(0, 9)))
         else:
             passwordList.append(random.choice(symbols))
-    password = ''.join(passwordList)
+    password = "".join(passwordList)
     return password
 
+
 # -------------------- Program Loop -------------------- #
-while True: # Loops the program until the user CTRL+C's
+while True:  # Loops the program until the user CTRL+C's
     clear()
     clearToGenerate = False
-    desiredLength = input('How many characters should your password contain? ')
+    desiredLength = input("How many characters should your password contain? ")
 
     try:
         desiredLength = int(desiredLength)
         clearToGenerate = True
         proceed = True
     except:
-        print(f'Failed to convert "{desiredLength}" to an integer. Try again with a whole number.')
+        print(
+            f'Failed to convert "{desiredLength}" to an integer. Try again with a whole number.'
+        )
         pause()
         clearToGenerate = False
         proceed = False
 
     if proceed is True:
-        canIncludeSymbols = input('Can this password contain symbols? (y/n): ').lower()
+        canIncludeSymbols = input("Can this password contain symbols? (y/n): ").lower()
 
-        if canIncludeSymbols != 'y' and canIncludeSymbols != 'n':
+        if canIncludeSymbols != "y" and canIncludeSymbols != "n":
             clearToGenerate = False
-            print(f'Invalid option. Please try again.')
+            print(f"Invalid option. Please try again.")
             pause()
         else:
             clearToGenerate = True
@@ -65,21 +71,20 @@ while True: # Loops the program until the user CTRL+C's
         pass
 
     while clearToGenerate is True:
-        if canIncludeSymbols == 'y':
-            generatedPassword = generatePassword(length=desiredLength, includeSymbols=True)
+        if canIncludeSymbols == "y":
+            generatedPassword = generatePassword(desiredLength, True)
             clear()
             print(f"Your {desiredLength} character password is:\n{generatedPassword}")
             pause()
-        elif canIncludeSymbols == 'n':
-            generatedPassword = generatePassword(length=desiredLength, includeSymbols=False)
+        elif canIncludeSymbols == "n":
+            generatedPassword = generatePassword(desiredLength, False)
             clear()
             print(f"Your {desiredLength} character password is:\n{generatedPassword}")
             pause()
         else:
-            print(f'Something went wrong. Please try again')
+            print(f"Something went wrong. Please try again")
             pause()
-        
+
         clearToGenerate = False
 
 # So many nested if statements, so little time to de-nest.
-        
