@@ -32,7 +32,7 @@ while True:
 
     while calculatable is True:
         if operation == "^":
-            answer = num1**num2
+            answer = num1 ** num2
             clear()
             print(f"{equation} = {answer}")
             break
