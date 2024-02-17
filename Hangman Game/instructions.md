@@ -1,4 +1,4 @@
-# Hangman (WIP)
+# Hangman
 Guess the letters in the mystery word!
 
 ## Requirements
