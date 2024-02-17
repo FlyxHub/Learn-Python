@@ -13,9 +13,7 @@ def pause():  # Makes the user press ENTER to continue
     return
 
 
-def updateFile(
-    fileName: str, text: str = None
-):  # Creates/opens file and optionally writes text to it
+def updateFile(fileName: str, text: str = None):  # Creates/opens file and optionally writes text to it
     if not text:
         try:
             file = open(f"{dir}/{fileName}", "x")
