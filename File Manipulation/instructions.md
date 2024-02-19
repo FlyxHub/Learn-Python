@@ -8,7 +8,7 @@ For this challenge, write a script to do the following:
     1. Create an empty file
     2. Write text to a file (create if not exists)
     3. Exit
-- Prompt the user for the name of file to create/edit, and create the file
+- Prompt the user for the name of file to create/edit, and create the file (*in the directory of the script*)
 - If required prompt the user for text to write to file, and write it to the file
 - Prompt the user to press ENTER to go back to the start menu
 
